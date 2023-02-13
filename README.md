@@ -1,5 +1,7 @@
 # 2DPlatformerWithStateMachine
 
+Code theo cách cơ bản nhất, k dùng nhiều kỹ thuật trong unity.
+
 Sử dụng state pattern cho nhân vật Enemy.
 
 -> có thể áp dụng thêm object pool cho các object như: kunai, enemy,...
