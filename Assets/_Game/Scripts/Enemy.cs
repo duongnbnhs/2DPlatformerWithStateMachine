@@ -11,6 +11,9 @@ public class Enemy : Character
 
     [SerializeField] private GameObject attackArea;
 
+    [Header("Game sounds Effect: ")]
+    public AudioClip slashEnemySound;
+
     private IState currentState;
 
     private bool isRight = true;
@@ -99,6 +102,7 @@ public class Enemy : Character
     {
         ChangeAnim(StringHelper.ANIM_ATTACK);
         ActiveAttack();
+        AudioController.Ins.PlaySound(slashEnemySound);
         Invoke(nameof(DeActiveAttack), 0.5f);
     }
 

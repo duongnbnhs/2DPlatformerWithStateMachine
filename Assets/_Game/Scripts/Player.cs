@@ -15,6 +15,11 @@ public class Player : Character
     [SerializeField] private Transform throwPoint;
     [SerializeField] private GameObject attackArea;
 
+    [Header("Game sounds Effect: ")]
+    public AudioClip slashSound;
+    public AudioClip kunaiSound;
+    public AudioClip getCoinSound;
+
     private bool isGrounded = true;
     private bool isJumping = false;
     private bool isAttack = false;
@@ -156,6 +161,7 @@ public class Player : Character
 
     public void Attack()
     {
+        AudioController.Ins.PlaySound(slashSound);
         ChangeAnim(StringHelper.ANIM_ATTACK);
         isAttack = true;
         Invoke(nameof(ResetAttack), 0.5f);
@@ -165,6 +171,7 @@ public class Player : Character
 
     public void Throw()
     {
+        AudioController.Ins.PlaySound(kunaiSound);
         ChangeAnim(StringHelper.ANIM_THROW);
         isAttack = true;
         Invoke(nameof(ResetAttack), 0.5f);
@@ -213,6 +220,7 @@ public class Player : Character
     {
         if (collision.tag == "Coin")
         {
+            AudioController.Ins.PlaySound(getCoinSound);
             coin++;
             PlayerPrefs.SetInt("coin", coin);
             UIManager.instance.SetCoin(coin);
