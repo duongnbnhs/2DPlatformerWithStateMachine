@@ -4706,6 +4706,7 @@ MonoBehaviour:
   moveSpeed: 2.5
   rb: {fileID: 252786961}
   attackArea: {fileID: 2004928983}
+  slashEnemySound: {fileID: 8300000, guid: 77a4679885f340e479c39656b910c1e5, type: 3}
 --- !u!50 &252786961
 Rigidbody2D:
   serializedVersion: 4
@@ -4975,6 +4976,152 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &310147421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310147424}
+  - component: {fileID: 310147423}
+  - component: {fileID: 310147422}
+  m_Layer: 0
+  m_Name: Audio Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &310147422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310147421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2584c8f6fc8c1df429893da5e3a6fc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicVolume: 0.2
+  sfxVolume: 1
+  musicAus: {fileID: 310147423}
+  sfxAus: {fileID: 310147423}
+  backgroundMusics:
+  - {fileID: 8300000, guid: d6a9c1d5565ce2b4f8f39a1dc01844ee, type: 3}
+--- !u!82 &310147423
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310147421}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &310147424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310147421}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.527991, y: 0.24851313, z: -10.290062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &325048096
 GameObject:
   m_ObjectHideFlags: 0
@@ -6365,6 +6512,9 @@ MonoBehaviour:
   kunaiPrefab: {fileID: 155990408, guid: 06b8f8cd0d354914a9ef825315b7d898, type: 3}
   throwPoint: {fileID: 1909841272}
   attackArea: {fileID: 1288465703}
+  slashSound: {fileID: 8300000, guid: b1217b46e0ea27b40ac38bdd56e71a24, type: 3}
+  kunaiSound: {fileID: 8300000, guid: 4b85074efe636074d89dda3ae8210e98, type: 3}
+  getCoinSound: {fileID: 8300000, guid: 5f70d954f961cf845990d101ff88eda5, type: 3}
 --- !u!1 &627092714
 GameObject:
   m_ObjectHideFlags: 0
@@ -8654,6 +8804,7 @@ MonoBehaviour:
   moveSpeed: 2.5
   rb: {fileID: 1019677740}
   attackArea: {fileID: 381315022}
+  slashEnemySound: {fileID: 0}
 --- !u!50 &1019677740
 Rigidbody2D:
   serializedVersion: 4
