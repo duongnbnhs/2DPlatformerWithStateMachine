@@ -3,24 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character
+public class ShootingEnemy : Enemy
 {
-    [SerializeField] protected float attackRange;
-    [SerializeField] protected float moveSpeed;
-    [SerializeField] protected Rigidbody2D rb;
-
-    [SerializeField] protected GameObject attackArea;
-
-    [Header("Game sounds Effect: ")]
-    public AudioClip slashEnemySound;
-
-    protected IState currentState;
-
-    protected bool isRight = true;
-
-    protected Character target;
-    public Character Target => target;
-
+    [SerializeField] private Transform throwPoint;
+    [SerializeField] private EnemyKunai ekunaiPrefab;
 
     private void Update()
     {
@@ -67,7 +53,7 @@ public class Enemy : Character
         }
     }
 
-    public void SetTarget(Character character)
+    internal void SetTarget(Character character)
     {
         this.target = character;
 
@@ -98,7 +84,7 @@ public class Enemy : Character
         rb.velocity = Vector2.zero;
     }
 
-    public virtual void Attack()
+    public override void Attack()
     {
         ChangeAnim(StringHelper.ANIM_ATTACK);
         ActiveAttack();
@@ -106,7 +92,7 @@ public class Enemy : Character
         Invoke(nameof(DeActiveAttack), 0.5f);
     }
 
-    public virtual bool IsTargetInRange()
+    public override bool IsTargetInRange()
     {
         if (target != null && Vector2.Distance(target.transform.position, transform.position) <= attackRange)
         {
@@ -117,29 +103,21 @@ public class Enemy : Character
             return false;
         }
     }
-
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "EnemyWall")
-        {
-            ChangeDirection(!isRight);
-        }
-    }
-
-    public virtual void ChangeDirection(bool isRight)
+    public override void ChangeDirection(bool isRight)
     {
         this.isRight = isRight;
-        transform.rotation = isRight ? Quaternion.Euler(Vector3.zero) : Quaternion.Euler(Vector3.up  * 180);
+        transform.rotation = isRight ? Quaternion.Euler(Vector3.zero) : Quaternion.Euler(Vector3.up * 180);
+    }
+    protected override void ActiveAttack()
+    {
+        //Debug.Log("Attack");
+        ChangeAnim(StringHelper.ANIM_ATTACK);
+        Instantiate(ekunaiPrefab, throwPoint.position, throwPoint.rotation);
     }
 
-    protected virtual void ActiveAttack()
+    protected override void DeActiveAttack()
     {
-        attackArea.SetActive(true);
-    }
-
-    protected virtual void DeActiveAttack()
-    {
-        attackArea.SetActive(false);
+        //attackArea.SetActive(false);
     }
 
 }

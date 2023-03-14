@@ -159,7 +159,7 @@ public class Player : Character
         return hit.collider != null;
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
         AudioController.Ins.PlaySound(slashSound);
         ChangeAnim(StringHelper.ANIM_ATTACK);
@@ -175,7 +175,6 @@ public class Player : Character
         ChangeAnim(StringHelper.ANIM_THROW);
         isAttack = true;
         Invoke(nameof(ResetAttack), 0.5f);
-
         Instantiate(kunaiPrefab, throwPoint.position, throwPoint.rotation);
     }
 
