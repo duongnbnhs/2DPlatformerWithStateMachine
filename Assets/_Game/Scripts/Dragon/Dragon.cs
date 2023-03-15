@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Dragon : Character
 {
-    [SerializeField] private float attackRange;
+    [SerializeField] private float strikeRange;
+    [SerializeField] private float blastRange;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Rigidbody2D rb;
-
-    //[SerializeField] private GameObject attackArea;
+    [SerializeField] private Kunai kunaiPrefab;
+    [SerializeField] private Transform throwPoint;
+    //[SerializeField] private GameObject strikeArea;
 
     private IState<Dragon> currentState;
 
-    public bool isRight = true;
-
-    private Character target;
+    private bool isRight = true;
+    public Character target;
+    private bool isAttack = false;
     public Character Target => target;
+
+    public bool isHurt = false;
 
     private void Update()
     {
@@ -67,7 +71,7 @@ public class Dragon : Character
 
         if (IsTargetInRange())
         {
-            ChangeState(new DragonBlastState());
+            ChangeState(new DragonStrikeState());
         }
         else
         if (Target != null)
@@ -91,18 +95,30 @@ public class Dragon : Character
         ChangeAnim(StringHelper.ANIM_IDLE);
         rb.velocity = Vector2.zero;
     }
+    public void Strike()
+    {
+        rb.AddForce(transform.forward * 10f, ForceMode2D.Impulse);
+        //change anim strike
+        anim.ResetTrigger("strike");
+        anim.SetTrigger("strike");        
 
+    }
     public void Blast()
     {
-        /*ChangeAnim(StringHelper.ANIM_ATTACK);
-        ActiveAttack();
-        AudioController.Ins.PlaySound(slashEnemySound);
-        Invoke(nameof(DeActiveAttack), 0.5f);*/
+        ChangeAnim(StringHelper.ANIM_DRAGON_BLAST);
+        isAttack = true;
+        Invoke(nameof(ResetAttack), 0.5f);
+        Instantiate(kunaiPrefab, throwPoint.position, throwPoint.rotation);
     }
-
+    private void ResetAttack()
+    {
+        isAttack = false;
+        anim.ResetTrigger(StringHelper.ANIM_IDLE);
+        anim.SetTrigger(StringHelper.ANIM_IDLE);
+    }
     public bool IsTargetInRange()
     {
-        if (target != null && Vector2.Distance(target.transform.position, transform.position) <= attackRange)
+        if ((target != null && Vector2.Distance(target.transform.position, transform.position) <= strikeRange ))
         {
             return true;
         }
@@ -124,5 +140,18 @@ public class Dragon : Character
     {
         this.isRight = isRight;
         transform.rotation = isRight ? Quaternion.Euler(Vector3.zero) : Quaternion.Euler(Vector3.up * 180);
+    }
+    
+    float timer = 0f;
+    public void Hurt()
+    {
+        timer+=Time.deltaTime;
+        
+        ChangeAnim(StringHelper.ANIM_DRAGON_HURT);
+        if (timer > 1f)
+        {
+            timer = 0f;
+            ChangeState(new DragonPatrolState());
+        }
     }
 }

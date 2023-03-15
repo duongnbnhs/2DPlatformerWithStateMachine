@@ -12,7 +12,6 @@ public class AttackState : IState<Enemy>
         {
             //doi huong enemy toi huong cua player
             enemy.ChangeDirection(enemy.Target.transform.position.x > enemy.transform.position.x);
-
             enemy.StopMoving();
             enemy.Attack();
         }

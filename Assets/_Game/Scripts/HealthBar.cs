@@ -31,6 +31,6 @@ public class HealthBar : MonoBehaviour
     public void SetNewHp(float hp)
     {
         this.hp = hp;
-        //imageFill.fillAmount = hp / maxHp;
+        imageFill.fillAmount = hp / maxHp;
     }
 }

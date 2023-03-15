@@ -23,7 +23,7 @@ public class DragonPatrolState : IState<Dragon>
 
             if (dragon.IsTargetInRange())
             {
-                dragon.ChangeState(new DragonBlastState());
+                dragon.ChangeState(new DragonStrikeState());
             }
             else
             {
