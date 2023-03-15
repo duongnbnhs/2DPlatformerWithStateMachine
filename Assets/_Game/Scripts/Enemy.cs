@@ -14,7 +14,7 @@ public class Enemy : Character
     [Header("Game sounds Effect: ")]
     public AudioClip slashEnemySound;
 
-    private IState currentState;
+    private IState<Enemy> currentState;
 
     private bool isRight = true;
 
@@ -52,7 +52,7 @@ public class Enemy : Character
     }
 
 
-    public void ChangeState(IState newState)
+    public void ChangeState(IState<Enemy> newState)
     {
         if (currentState != null)
         {
