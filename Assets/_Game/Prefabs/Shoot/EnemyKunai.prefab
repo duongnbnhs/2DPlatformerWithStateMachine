@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 740278761698869806, guid: 06b8f8cd0d354914a9ef825315b7d898, type: 3}
       propertyPath: m_Name
-      value: Kunai Variant
+      value: EnemyKunai
       objectReference: {fileID: 0}
     - target: {fileID: 740278761698869807, guid: 06b8f8cd0d354914a9ef825315b7d898, type: 3}
       propertyPath: m_RootOrder
@@ -102,4 +102,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitVFX: {fileID: 6963639000805962400, guid: 719a472c68416da42acc0bade4f2f282, type: 3}
   rb: {fileID: 7036309724929909758}
-  hitSound: {fileID: 8300000, guid: d819f100f373aa845b1c5f7f6491a95a, type: 3}
+  hitSound: {fileID: 8300000, guid: 32ff513695816ae4fb9ecd5c1bc67120, type: 3}

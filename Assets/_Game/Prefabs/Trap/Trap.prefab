@@ -416,7 +416,7 @@ MonoBehaviour:
   rb: {fileID: 5726494706180877242}
   timeLoopAttack: 0.1
   attackArea: {fileID: 5726494705517140860}
-  slashEnemySound: {fileID: 8300000, guid: 77a4679885f340e479c39656b910c1e5, type: 3}
+  slashEnemySound: {fileID: 8300000, guid: 11f2fb8c24ab53741939b255bda4aab3, type: 3}
 --- !u!1 &5726494706753761418
 GameObject:
   m_ObjectHideFlags: 0
