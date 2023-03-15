@@ -38,51 +38,6 @@ public class ShootingEnemy : Enemy
     }
 
 
-    public void ChangeState(IState newState)
-    {
-        if (currentState != null)
-        {
-            currentState.OnExit(this);
-        }
-
-        currentState = newState;
-
-        if (currentState != null)
-        {
-            currentState.OnEnter(this);
-        }
-    }
-
-    internal void SetTarget(Character character)
-    {
-        this.target = character;
-
-        if (IsTargetInRange())
-        {
-            ChangeState(new AttackState());
-        }
-        else
-        if (Target != null)
-        {
-            ChangeState(new PatrolState());
-        }
-        else
-        {
-            ChangeState(new IdleState());
-        }
-    }
-
-    public void Moving()
-    {
-        ChangeAnim(StringHelper.ANIM_RUN);
-        rb.velocity = transform.right * moveSpeed;
-    }
-
-    public void StopMoving()
-    {
-        ChangeAnim(StringHelper.ANIM_IDLE);
-        rb.velocity = Vector2.zero;
-    }
 
     public override void Attack()
     {

@@ -8,6 +8,7 @@ public class Enemy : Character
     [SerializeField] protected float attackRange;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected float timeLoopAttack;
 
     [SerializeField] protected GameObject attackArea;
 
@@ -103,7 +104,7 @@ public class Enemy : Character
         ChangeAnim(StringHelper.ANIM_ATTACK);
         ActiveAttack();
         AudioController.Ins.PlaySound(slashEnemySound);
-        Invoke(nameof(DeActiveAttack), 0.5f);
+        Invoke(nameof(DeActiveAttack), timeLoopAttack);
     }
 
     public virtual bool IsTargetInRange()
