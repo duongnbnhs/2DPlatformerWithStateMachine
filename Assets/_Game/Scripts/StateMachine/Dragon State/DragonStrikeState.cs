@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragonStrikeState : MonoBehaviour
+public class DragonStrikeState : IState<Dragon>
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnEnter(Dragon t)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnExecute(Dragon t)
     {
-        
+
+    }
+
+    public void OnExit(Dragon t)
+    {
+
     }
 }

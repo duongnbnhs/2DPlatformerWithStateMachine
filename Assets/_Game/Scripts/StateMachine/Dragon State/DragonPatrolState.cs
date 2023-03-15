@@ -2,16 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragonPatrolState : MonoBehaviour
+public class DragonPatrolState : IState<Dragon>
 {
-    // Start is called before the first frame update
-    void Start()
+    float randomTime;
+    float timer;
+    public void OnEnter(Dragon t)
     {
-        
+        timer = 0;
+        randomTime = Random.Range(3f, 6f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnExecute(Dragon dragon)
+    {
+        timer += Time.deltaTime;
+
+        if (dragon.Target != null)
+        {
+            //doi huong enemy toi huong cua player
+            dragon.ChangeDirection(dragon.Target.transform.position.x > dragon.transform.position.x);
+
+            if (dragon.IsTargetInRange())
+            {
+                dragon.ChangeState(new DragonBlastState());
+            }
+            else
+            {
+                dragon.Moving();
+            }
+
+        }
+        else
+        {
+            if (timer < randomTime)
+            {
+                dragon.Moving();
+            }
+            else
+            {
+                dragon.ChangeState(new DragonIdleState());
+            }
+        }
+    }
+
+    public void OnExit(Dragon t)
     {
         
     }
