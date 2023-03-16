@@ -21,13 +21,20 @@ public class DragonPatrolState : IState<Dragon>
             //doi huong enemy toi huong cua player
             dragon.ChangeDirection(dragon.Target.transform.position.x > dragon.transform.position.x);
 
-            if (dragon.IsTargetInRange())
+            if (dragon.IsTargetInStrikeRange())
             {
                 dragon.ChangeState(new DragonStrikeState());
             }
             else
             {
-                dragon.Moving();
+                if (dragon.IsTargetInBlastRange())
+                {
+                    dragon.ChangeState(new DragonBlastState());
+                }
+                else
+                {
+                    dragon.Moving();
+                }
             }
 
         }

@@ -8,14 +8,14 @@ public class Dragon : Character
     [SerializeField] private float blastRange;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Kunai kunaiPrefab;
+    [SerializeField] private FireBall fireball;
     [SerializeField] private Transform throwPoint;
     //[SerializeField] private GameObject strikeArea;
 
     private IState<Dragon> currentState;
 
     private bool isRight = true;
-    public Character target;
+    private Character target;
     private bool isAttack = false;
     public Character Target => target;
 
@@ -69,19 +69,29 @@ public class Dragon : Character
     {
         this.target = character;
 
-        if (IsTargetInRange())
+        if (IsTargetInStrikeRange())
         {
             ChangeState(new DragonStrikeState());
         }
         else
-        if (Target != null)
         {
-            ChangeState(new DragonPatrolState());
+            if (IsTargetInBlastRange())
+            {
+                ChangeState(new DragonBlastState());
+            }
+            else
+            {
+                if (Target != null)
+                {
+                    ChangeState(new DragonPatrolState());
+                }
+                else
+                {
+                    ChangeState(new DragonIdleState());
+                }
+            }
         }
-        else
-        {
-            ChangeState(new DragonIdleState());
-        }
+        
     }
 
     public void Moving()
@@ -108,7 +118,7 @@ public class Dragon : Character
         ChangeAnim(StringHelper.ANIM_DRAGON_BLAST);
         isAttack = true;
         Invoke(nameof(ResetAttack), 0.5f);
-        Instantiate(kunaiPrefab, throwPoint.position, throwPoint.rotation);
+        Instantiate(fireball, throwPoint.position, throwPoint.rotation);
     }
     private void ResetAttack()
     {
@@ -116,9 +126,20 @@ public class Dragon : Character
         anim.ResetTrigger(StringHelper.ANIM_IDLE);
         anim.SetTrigger(StringHelper.ANIM_IDLE);
     }
-    public bool IsTargetInRange()
+    public bool IsTargetInStrikeRange()
     {
         if ((target != null && Vector2.Distance(target.transform.position, transform.position) <= strikeRange ))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool IsTargetInBlastRange()
+    {
+        if (target != null && Vector2.Distance(target.transform.position, transform.position) <= blastRange)
         {
             return true;
         }
@@ -130,7 +151,7 @@ public class Dragon : Character
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyWall")
+        if (collision.tag == "EnemyWall" && Target == null)
         {
             ChangeDirection(!isRight);
         }

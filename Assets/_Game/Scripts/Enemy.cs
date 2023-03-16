@@ -120,7 +120,7 @@ public class Enemy : Character
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyWall")
+        if (collision.tag == "EnemyWall" && Target == null)
         {
             ChangeDirection(!isRight);
         }
