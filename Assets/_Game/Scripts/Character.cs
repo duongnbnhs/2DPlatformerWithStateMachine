@@ -38,12 +38,10 @@ public class Character : MonoBehaviour
         Invoke(nameof(OnDespawn), 2f);
     }
 
-    protected void ChangeAnim(string animName)
+    internal void ChangeAnim(string animName)
     {
         if (currentAnimName != animName)
         {
-            //Debug.Log("new:" + animName);
-            //Debug.Log("old:"+currentAnimName);
             anim.ResetTrigger(animName);
             currentAnimName = animName;
             anim.SetTrigger(currentAnimName);
@@ -52,7 +50,6 @@ public class Character : MonoBehaviour
 
     public void OnHit(float damage)
     {
-        //Debug.Log("Hit");
         if (!IsDead)
         {
             hp -= damage;

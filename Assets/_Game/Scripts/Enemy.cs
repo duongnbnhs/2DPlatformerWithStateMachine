@@ -15,7 +15,8 @@ public class Enemy : Character
     [Header("Game sounds Effect: ")]
     public AudioClip slashEnemySound;
 
-    protected IState currentState;
+    protected IState<Enemy> currentState;
+
 
     protected bool isRight = true;
 
@@ -53,7 +54,7 @@ public class Enemy : Character
     }
 
 
-    public void ChangeState(IState newState)
+    public void ChangeState(IState<Enemy> newState)
     {
         if (currentState != null)
         {
@@ -121,7 +122,7 @@ public class Enemy : Character
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyWall")
+        if (collision.tag == "EnemyWall" && Target == null)
         {
             ChangeDirection(!isRight);
         }

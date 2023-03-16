@@ -127,7 +127,7 @@ public class Player : Character
         DeActiveAttack();
 
         SavePoint();
-        UIManager.instance.SetCoin(coin);
+        //UIManager.instance.SetCoin(coin);
     }
 
     public override void OnDespawn()

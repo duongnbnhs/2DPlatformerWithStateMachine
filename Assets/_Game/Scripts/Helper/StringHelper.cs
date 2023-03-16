@@ -11,5 +11,8 @@ public class StringHelper : MonoBehaviour
     public const string ANIM_THROW = "throw";
     public const string ANIM_FALL = "fall";
     public const string ANIM_DIE = "die";
+    public const string ANIM_DRAGON_STRIKE = "strike";
+    public const string ANIM_DRAGON_BLAST = "blast";
+    public const string ANIM_DRAGON_HURT = "hurt";
 
 }
