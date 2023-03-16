@@ -4,13 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-
+  - Coin
   - EnemyWall
   - Enemy
   - DeathZone
-  - DizzyArea
-  - Coin
-
   layers:
   - Default
   - TransparentFX
