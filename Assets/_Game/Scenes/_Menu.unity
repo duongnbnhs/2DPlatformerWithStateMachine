@@ -301,9 +301,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3533460908112418961, guid: 905e732a0218ad9468e70b176b766921, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1166.271
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533460908112418961, guid: 905e732a0218ad9468e70b176b766921, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 217.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533460908112418961, guid: 905e732a0218ad9468e70b176b766921, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015259
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533460908112418961, guid: 905e732a0218ad9468e70b176b766921, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 3533460908112418964, guid: 905e732a0218ad9468e70b176b766921, type: 3}
       propertyPath: m_Text
       value: Wellcome ninja!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533460908112418964, guid: 905e732a0218ad9468e70b176b766921, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533460908112418964, guid: 905e732a0218ad9468e70b176b766921, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533460908112418964, guid: 905e732a0218ad9468e70b176b766921, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3533460908278690789, guid: 905e732a0218ad9468e70b176b766921, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

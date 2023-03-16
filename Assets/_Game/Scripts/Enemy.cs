@@ -5,20 +5,22 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    [SerializeField] private float attackRange;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] protected float attackRange;
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected float timeLoopAttack;
 
-    [SerializeField] private GameObject attackArea;
+    [SerializeField] protected GameObject attackArea;
 
     [Header("Game sounds Effect: ")]
     public AudioClip slashEnemySound;
 
-    private IState<Enemy> currentState;
+    protected IState<Enemy> currentState;
 
-    private bool isRight = true;
 
-    private Character target;
+    protected bool isRight = true;
+
+    protected Character target;
     public Character Target => target;
 
 
@@ -67,7 +69,7 @@ public class Enemy : Character
         }
     }
 
-    internal void SetTarget(Character character)
+    public void SetTarget(Character character)
     {
         this.target = character;
 
@@ -98,15 +100,15 @@ public class Enemy : Character
         rb.velocity = Vector2.zero;
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
         ChangeAnim(StringHelper.ANIM_ATTACK);
         ActiveAttack();
         AudioController.Ins.PlaySound(slashEnemySound);
-        Invoke(nameof(DeActiveAttack), 0.5f);
+        Invoke(nameof(DeActiveAttack), timeLoopAttack);
     }
 
-    public bool IsTargetInRange()
+    public virtual bool IsTargetInRange()
     {
         if (target != null && Vector2.Distance(target.transform.position, transform.position) <= attackRange)
         {
@@ -118,7 +120,7 @@ public class Enemy : Character
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "EnemyWall" && Target == null)
         {
@@ -126,18 +128,18 @@ public class Enemy : Character
         }
     }
 
-    public void ChangeDirection(bool isRight)
+    public virtual void ChangeDirection(bool isRight)
     {
         this.isRight = isRight;
         transform.rotation = isRight ? Quaternion.Euler(Vector3.zero) : Quaternion.Euler(Vector3.up  * 180);
     }
 
-    private void ActiveAttack()
+    protected virtual void ActiveAttack()
     {
         attackArea.SetActive(true);
     }
 
-    private void DeActiveAttack()
+    protected virtual void DeActiveAttack()
     {
         attackArea.SetActive(false);
     }
