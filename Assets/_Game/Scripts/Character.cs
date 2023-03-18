@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
     [SerializeField] protected CombatText CombatTextPrefab;
 
 
-    private float hp;
+    public float hp;
     private string currentAnimName;
 
     public bool IsDead => hp <= 0;
@@ -30,6 +30,12 @@ public class Character : MonoBehaviour
     public virtual void OnDespawn()
     {
 
+    }
+    public virtual void OnHeal(float hpHeal)
+    {
+        Debug.Log("Heal bf: " + this.hp);
+        this.hp += hpHeal;
+        Debug.Log("Heal at: " + this.hp);
     }
 
     protected virtual void OnDeath()

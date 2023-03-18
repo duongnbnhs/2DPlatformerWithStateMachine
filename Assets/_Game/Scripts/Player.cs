@@ -141,6 +141,11 @@ public class Player : Character
         base.OnDeath();        
     }
 
+    public override void OnHeal(float hpHeal)
+    {
+        base.OnHeal(hpHeal);
+    }
+
     private bool CheckGrounded()
     {
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.1f, Color.red);
