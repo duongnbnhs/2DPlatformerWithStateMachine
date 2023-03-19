@@ -18,7 +18,7 @@ public class WinPoint : MonoBehaviour
         if (collision.tag == "Player" && player.rewardCollect == ScoreWin)
         {
             anim.SetBool("activate", true);
-            uiManager.GameOver();
+            uiManager.GameOver("Victory!!!");
             return;
         }else if(collision.tag == "Player" && player.rewardCollect < ScoreWin)
         {

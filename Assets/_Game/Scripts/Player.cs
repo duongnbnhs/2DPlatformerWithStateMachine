@@ -27,6 +27,8 @@ public class Player : Character
     private bool isDeath = false;
     public bool isShieldActive = false;
 
+    private UIManage uiManager;
+
     private float horizontal;
 
     //Number of treasure chest collected
@@ -39,6 +41,7 @@ public class Player : Character
     {
         //coin = PlayerPrefs.GetInt("coin", 0);
         //coin = 0;
+        uiManager = FindObjectOfType<UIManage>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,7 @@ public class Player : Character
 
         if (IsDead)
         {
+            uiManager.GameOver("You lose");
             return;
         }
 
@@ -116,6 +120,7 @@ public class Player : Character
             //horizontal > 0 -> tra ve 0, neu horizontal <= 0 -> tra ve la 180
             transform.rotation = Quaternion.Euler(new Vector3(0, horizontal > 0 ? 0 : 180, 0));
             //transform.localScale = new Vector3(horizontal, 1, 1);
+            
         }
         //idle
         else if (isGrounded)

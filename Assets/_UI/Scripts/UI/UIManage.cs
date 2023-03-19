@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManage : MonoBehaviour
 {
-    [Header ("Game Over")]
+    [Header("Game Over")]
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private AudioClip gameOverSound;
 
@@ -26,8 +27,10 @@ public class UIManage : MonoBehaviour
 
     #region Game Over
     //Activate game over screen
-    public void GameOver()
+    public void GameOver(string text)
     {
+        var Ded = gameOverScreen.GetComponentInChildren<Text>(true);
+        Ded.text = text;
         gameOverScreen.SetActive(true);
         SoundManager.instance.PlaySound(gameOverSound);
         Time.timeScale = 0;
@@ -76,7 +79,7 @@ public class UIManage : MonoBehaviour
     {
         Time.timeScale = 1;
         Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
     public void SoundVolume()
     {
