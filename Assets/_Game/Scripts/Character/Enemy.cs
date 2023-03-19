@@ -50,6 +50,7 @@ public class Enemy : Character
     {
         ChangeState(null);
         base.OnDeath();
+        gameObject.SetActive(false);
     }
 
 
