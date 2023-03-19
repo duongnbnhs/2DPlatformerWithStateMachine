@@ -12,6 +12,11 @@ public class CombatText : MonoBehaviour
         hpText.text = damage.ToString();
         Invoke(nameof(OnDespawn), 1f);
     }
+    public void OnInitAnnounce(string onInitAnnounce)
+    {
+        hpText.text = onInitAnnounce;
+        Invoke(nameof(OnDespawn), 5f);
+    }
 
     public void OnDespawn()
     {

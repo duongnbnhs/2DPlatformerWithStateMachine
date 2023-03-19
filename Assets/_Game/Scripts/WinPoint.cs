@@ -7,6 +7,8 @@ public class WinPoint : MonoBehaviour
     private UIManage uiManager;
     private Animator anim;
     public int ScoreWin;
+    [SerializeField] protected CombatText CombatTextPrefab;
+
     private void Awake()
     {
         uiManager = FindObjectOfType<UIManage>();
@@ -23,6 +25,7 @@ public class WinPoint : MonoBehaviour
         }else if(collision.tag == "Player" && player.rewardCollect < ScoreWin)
         {
             //ToDo: Add message UI not enough chest treasure
+            Instantiate(CombatTextPrefab, transform.position + Vector3.up, Quaternion.identity).OnInitAnnounce("Collect more chests");
         }
     }
 }
