@@ -136,7 +136,10 @@ public class Player : Character
         base.OnDespawn();
         OnInit();
     }
-
+    public void OnHeal(float healBonus)
+    {
+        base.hp+= healBonus;
+    }
     protected override void OnDeath()
     {
         base.OnDeath();        

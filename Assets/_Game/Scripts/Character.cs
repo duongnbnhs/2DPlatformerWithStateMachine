@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
     [SerializeField] protected CombatText CombatTextPrefab;
 
 
-    private float hp;
+    public float hp;
     private string currentAnimName;
 
     public bool IsDead => hp <= 0;
