@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - DeathZone
   - Reward
+  - Shield
   layers:
   - Default
   - TransparentFX

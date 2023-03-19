@@ -14,6 +14,7 @@ public class Player : Character
     [SerializeField] private Kunai kunaiPrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private GameObject attackArea;
+    [SerializeField] private GameObject shieldPrefab;
 
     [Header("Game sounds Effect: ")]
     public AudioClip slashSound;
@@ -24,6 +25,7 @@ public class Player : Character
     private bool isJumping = false;
     private bool isAttack = false;
     private bool isDeath = false;
+    public bool isShieldActive = false;
 
     private float horizontal;
 
@@ -91,6 +93,11 @@ public class Player : Character
             if (Input.GetKeyDown(KeyCode.V) && isGrounded)
             {
                 Throw();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                EnebleShield();
             }
         }
 
@@ -233,6 +240,21 @@ public class Player : Character
         {
             ChangeAnim(StringHelper.ANIM_DIE);
             Invoke(nameof(OnInit), 1f);
+        }
+    }
+
+    public void EnebleShield()
+    {
+        if (isShieldActive)
+        {
+            shieldPrefab.SetActive(false);
+            isShieldActive = false;
+        }
+        else
+        {
+            shieldPrefab.SetActive(true);
+            isShieldActive = true;
+            
         }
     }
 
