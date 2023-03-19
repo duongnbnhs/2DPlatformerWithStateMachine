@@ -10,13 +10,20 @@ public class EnemyReward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActiveReward(Enemy1, Reward1);
-        ActiveReward(Enemy2, Reward2);
-        ActiveReward(Enemy3, Reward3);
-        ActiveReward(Enemy4, Reward4);
-        ActiveReward(Enemy5, Reward5);
-        ActiveReward(Enemy6, Reward6);
-        ActiveReward(Enemy7, Reward7);
+        if(Enemy1!=null&& Reward1!=null)
+            ActiveReward(Enemy1, Reward1);
+        if (Enemy2 != null && Reward2 != null)
+            ActiveReward(Enemy2, Reward2);
+        if (Enemy3 != null && Reward3 != null)
+            ActiveReward(Enemy3, Reward3);
+        if (Enemy4 != null && Reward4 != null)
+            ActiveReward(Enemy4, Reward4);
+        if (Enemy5 != null && Reward5 != null)
+            ActiveReward(Enemy5, Reward5);
+        if (Enemy6 != null && Reward6 != null)
+            ActiveReward(Enemy6, Reward6);
+        if (Enemy7 != null && Reward7 != null)
+            ActiveReward(Enemy7, Reward7);
     }
     private void ActiveReward(GameObject Enemy, GameObject Reward)
     {

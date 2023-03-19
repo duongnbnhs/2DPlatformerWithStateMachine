@@ -13,7 +13,11 @@ public class EnemyKunai : Kunai
             Instantiate(hitVFX, transform.position, transform.rotation);
             OnDespawn();
         }
-
+        if (collision.tag == "Rock")
+        {
+            Instantiate(hitVFX, transform.position, transform.rotation);
+            OnDespawn();
+        }
         if (collision.tag == "Shield")
         {
             Instantiate(hitVFX, transform.position, transform.rotation);

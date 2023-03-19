@@ -10,6 +10,7 @@ TagManager:
   - DeathZone
   - Reward
   - Shield
+  - Rock
   layers:
   - Default
   - TransparentFX

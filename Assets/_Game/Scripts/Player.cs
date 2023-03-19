@@ -12,6 +12,8 @@ public class Player : Character
     [SerializeField] private float jumpForce = 350;
 
     [SerializeField] private Kunai kunaiPrefab;
+
+    [SerializeField] private Rock rockPrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private GameObject attackArea;
     [SerializeField] private GameObject shieldPrefab;
@@ -103,6 +105,11 @@ public class Player : Character
             {
                 EnebleShield();
             }
+
+            if (Input.GetKeyDown(KeyCode.G) && isGrounded)
+            {
+                CallRock();
+            }
         }
 
         //check falling
@@ -192,6 +199,15 @@ public class Player : Character
         isAttack = true;
         Invoke(nameof(ResetAttack), 0.5f);
         Instantiate(kunaiPrefab, throwPoint.position, throwPoint.rotation);
+    }
+
+    public void CallRock()
+    {
+        AudioController.Ins.PlaySound(kunaiSound);
+        ChangeAnim(StringHelper.ANIM_THROW);
+        isAttack = true;
+        Invoke(nameof(ResetAttack), 0.5f);
+        Instantiate(rockPrefab, throwPoint.position, throwPoint.rotation);
     }
 
     private void ResetAttack()
