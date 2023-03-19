@@ -8,6 +8,7 @@ TagManager:
   - EnemyWall
   - Enemy
   - DeathZone
+  - Reward
   layers:
   - Default
   - TransparentFX

@@ -27,14 +27,15 @@ public class Player : Character
 
     private float horizontal;
 
-
-    private int coin = 0;
+    //Number of treasure chest collected
+    public int rewardCollect = 0;
+    //private int coin = 0;
 
     private Vector3 savePoint;
 
     private void Awake()
     {
-        coin = PlayerPrefs.GetInt("coin", 0);
+        //coin = PlayerPrefs.GetInt("coin", 0);
         //coin = 0;
     }
 
@@ -127,7 +128,7 @@ public class Player : Character
         DeActiveAttack();
 
         SavePoint();
-        UIManager.instance.SetCoin(coin);
+        //UIManager.instance.SetCoin(coin);
     }
 
     public override void OnDespawn()
@@ -225,9 +226,9 @@ public class Player : Character
         if (collision.tag == "Coin")
         {
             AudioController.Ins.PlaySound(getCoinSound);
-            coin++;
-            PlayerPrefs.SetInt("coin", coin);
-            UIManager.instance.SetCoin(coin);
+            //coin++;
+            //PlayerPrefs.SetInt("coin", coin);
+            //UIManager.instance.SetCoin(coin);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "DeathZone")

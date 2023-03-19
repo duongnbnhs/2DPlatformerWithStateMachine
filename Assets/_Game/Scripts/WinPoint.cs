@@ -6,6 +6,7 @@ public class WinPoint : MonoBehaviour
 {
     private UIManage uiManager;
     private Animator anim;
+    public int ScoreWin;
     private void Awake()
     {
         uiManager = FindObjectOfType<UIManage>();
@@ -13,11 +14,15 @@ public class WinPoint : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        var player = collision.GetComponent<Player>();
+        if (collision.tag == "Player" && player.rewardCollect == ScoreWin)
         {
             anim.SetBool("activate", true);
             uiManager.GameOver();
             return;
+        }else if(collision.tag == "Player" && player.rewardCollect < ScoreWin)
+        {
+            //ToDo: Add message UI not enough chest treasure
         }
     }
 }
