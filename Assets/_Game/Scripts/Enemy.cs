@@ -122,7 +122,7 @@ public class Enemy : Character
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyWall")
+        if ((Target is null || target is null) && collision.tag == "EnemyWall")
         {
             ChangeDirection(!isRight);
         }
