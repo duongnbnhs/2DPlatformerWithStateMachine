@@ -74,21 +74,30 @@ public class Dragon : Character
     }
     public void Trampling()
     {
-        
         ChangeAnim("jump");
         Vector2 currentPosition = transform.position;
         Vector2 targetPosition = target.transform.position;
         Vector2 flyPosition = new Vector2(currentPosition.x, currentPosition.y + 2.5f);
         Vector2 crouchPosition = new Vector2(targetPosition.x, currentPosition.y + 2.5f);
-        transform.DOMove(flyPosition, 0.6f).OnComplete(() =>
+        transform.DOMove(flyPosition, 0.3f).OnComplete(() =>
         {
             ChangeAnim("fly");
-            transform.DOMove(crouchPosition, 1.2f).OnComplete(() =>
+            transform.DOMove(crouchPosition, 1f).OnComplete(() =>
             {
                 ChangeAnim("crouch");
             });
         });
+    }
+    public void Blast()
+    {
 
+    }
+    public void Kick()
+    {
+
+    }
+    public void Earthquake()
+    {
 
     }
 }
