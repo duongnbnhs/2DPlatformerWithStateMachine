@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 4712c1ad024e03b4c97cf0683831cff8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -751567557905304882
+    second: crouch_02_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -126,7 +129,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: crouch_02_0
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1
+        width: 150
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2b85eb945e195f0800000000000000
+      internalID: -751567557905304882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

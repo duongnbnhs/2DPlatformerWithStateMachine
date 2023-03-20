@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 3cbc28c0984352d4393e38772abab30f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 719790094962350090
+    second: dizzy_03_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -126,7 +129,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: dizzy_03_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 5
+        width: 155
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08531b17453df900800000000000000
+      internalID: 719790094962350090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
