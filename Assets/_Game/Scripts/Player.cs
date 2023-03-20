@@ -80,7 +80,7 @@ public class Player : Character
             }
             //ChangeAnim(StringHelper.ANIM_IDLE);
             //jump
-            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
+            if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
             {
                 Jump();
             }

@@ -6,7 +6,7 @@ public class DragonIdleState : IState<Dragon>
 {
     public void OnEnter(Dragon dragon)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnExecute(Dragon dragon)

@@ -10,15 +10,13 @@ public class Dragon : Character
     [SerializeField] protected Rigidbody2D rb;
     protected bool isRight = true;
 
-    protected Character target;
+    public Character target;
     public Character Target => target;
     protected IState<Dragon> currentState;
     // Start is called before the first frame update
     void Start()
     {
         base.OnInit();
-
-        //ChangeState(new IdleState());
         //DeActiveAttack();
     }
 
@@ -29,12 +27,16 @@ public class Dragon : Character
         {
             currentState.OnExecute(this);
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Trampling();
+        }
     }
     public override void OnInit()
     {
         base.OnInit();
 
-        //ChangeState(new IdleState());
+        ChangeState(new DragonIdleState());
     }
 
     public override void OnDespawn()
