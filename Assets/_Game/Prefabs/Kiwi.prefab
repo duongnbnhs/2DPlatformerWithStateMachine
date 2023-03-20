@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6693211797658299748
+--- !u!1 &7585875210238247420
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6693211797658299749}
-  - component: {fileID: 6693211797658299744}
-  - component: {fileID: 6693211797658299751}
-  - component: {fileID: 6693211797658299750}
+  - component: {fileID: 7585875210305645396}
+  - component: {fileID: 7585875210238247417}
+  - component: {fileID: 7585875210238247423}
+  - component: {fileID: 5823136382257740275}
   m_Layer: 0
   m_Name: Kiwi
   m_TagString: Untagged
@@ -19,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6693211797658299749
+--- !u!4 &7585875210305645396
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693211797658299748}
+  m_GameObject: {fileID: 7585875210238247420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.61, y: -2.83, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6693211797658299744
+--- !u!212 &7585875210238247417
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693211797658299748}
+  m_GameObject: {fileID: 7585875210238247420}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,28 +84,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6693211797658299751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693211797658299748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e895d37697e5b48ac1bc6a59c77690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthValue: 30
-  CollectSound: {fileID: 8300000, guid: 5f70d954f961cf845990d101ff88eda5, type: 3}
-  healthBar: {fileID: 0}
---- !u!61 &6693211797658299750
+--- !u!61 &7585875210238247423
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693211797658299748}
+  m_GameObject: {fileID: 7585875210238247420}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -125,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.14}
   m_EdgeRadius: 0
+--- !u!114 &5823136382257740275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7585875210238247420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b60eda743542694da607e1f421d8002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollectSound: {fileID: 8300000, guid: 5f70d954f961cf845990d101ff88eda5, type: 3}

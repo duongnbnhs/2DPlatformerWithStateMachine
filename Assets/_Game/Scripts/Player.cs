@@ -16,6 +16,7 @@ public class Player : Character
     [SerializeField] private Rock rockPrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private GameObject attackArea;
+    [SerializeField] private AttackArea attackAreaScript;
     [SerializeField] private GameObject shieldPrefab;
 
     [Header("Game sounds Effect: ")]
@@ -23,12 +24,13 @@ public class Player : Character
     public AudioClip kunaiSound;
     public AudioClip getCoinSound;
 
+    private int levelPlayer = 1;
     private bool isGrounded = true;
     private bool isJumping = false;
     private bool isAttack = false;
     private bool isDeath = false;
     public bool isShieldActive = false;
-
+    public bool isRockUnlock = false;
     private UIManage uiManager;
 
     private float horizontal;
@@ -82,7 +84,7 @@ public class Player : Character
             {
                 Jump();
             }
- 
+
             //change anim run
             if (Mathf.Abs(horizontal) > 0.1f)
             {
@@ -106,7 +108,7 @@ public class Player : Character
                 EnebleShield();
             }
 
-            if (Input.GetKeyDown(KeyCode.G) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.G) && isGrounded && isRockUnlock == true)
             {
                 CallRock();
             }
@@ -127,7 +129,7 @@ public class Player : Character
             //horizontal > 0 -> tra ve 0, neu horizontal <= 0 -> tra ve la 180
             transform.rotation = Quaternion.Euler(new Vector3(0, horizontal > 0 ? 0 : 180, 0));
             //transform.localScale = new Vector3(horizontal, 1, 1);
-            
+
         }
         //idle
         else if (isGrounded)
@@ -157,11 +159,15 @@ public class Player : Character
     }
     public void OnHeal(float healBonus)
     {
-        base.hp+= healBonus;
+        base.hp += healBonus;
+    }
+    public void OnRockUnlock(bool unlock)
+    {
+        isRockUnlock = unlock;
     }
     protected override void OnDeath()
     {
-        base.OnDeath();        
+        base.OnDeath();
     }
 
     private bool CheckGrounded()
@@ -187,9 +193,9 @@ public class Player : Character
         AudioController.Ins.PlaySound(slashSound);
         ChangeAnim(StringHelper.ANIM_ATTACK);
         isAttack = true;
-        Invoke(nameof(ResetAttack), 0.5f);
+        Invoke(nameof(ResetAttack), 0.5f - levelPlayer * 0.1f);
         ActiveAttack();
-        Invoke(nameof(DeActiveAttack), 0.5f);
+        Invoke(nameof(DeActiveAttack), 0.5f - levelPlayer * 0.1f);
     }
 
     public void Throw()
@@ -197,7 +203,7 @@ public class Player : Character
         AudioController.Ins.PlaySound(kunaiSound);
         ChangeAnim(StringHelper.ANIM_THROW);
         isAttack = true;
-        Invoke(nameof(ResetAttack), 0.5f);
+        Invoke(nameof(ResetAttack), 0.5f - levelPlayer * 0.1f);
         Instantiate(kunaiPrefab, throwPoint.position, throwPoint.rotation);
     }
 
@@ -209,7 +215,14 @@ public class Player : Character
         Invoke(nameof(ResetAttack), 0.5f);
         Instantiate(rockPrefab, throwPoint.position, throwPoint.rotation);
     }
-
+    public void UpLevel(int add)
+    {
+        //Debug.Log("Level before add:" + levelPlayer);
+        levelPlayer += add;
+        speed += levelPlayer + 1;
+        attackAreaScript.damageInUplevel(levelPlayer);
+        //Debug.Log("Level after add:" + levelPlayer);
+    }
     private void ResetAttack()
     {
         isAttack = false;
@@ -275,7 +288,7 @@ public class Player : Character
         {
             shieldPrefab.SetActive(true);
             isShieldActive = true;
-            
+
         }
     }
 
