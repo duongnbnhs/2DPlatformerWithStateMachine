@@ -219,7 +219,7 @@ public class Player : Character
     {
         //Debug.Log("Level before add:" + levelPlayer);
         levelPlayer += addLevel;
-        speed += levelPlayer*0.5f;
+        speed += levelPlayer * 0.5f;
         attackAreaScript.damageInUplevel(levelPlayer);
         //Debug.Log("Level after add:" + levelPlayer);
     }
@@ -279,17 +279,13 @@ public class Player : Character
 
     public void EnebleShield()
     {
-        if (isShieldActive)
-        {
-            shieldPrefab.SetActive(false);
-            isShieldActive = false;
-        }
-        else
-        {
-            shieldPrefab.SetActive(true);
-            isShieldActive = true;
+        shieldPrefab.SetActive(true);
+        Invoke(nameof(ShieldOff), 0.75f);
 
-        }
+    }
+    public void ShieldOff()
+    {
+        shieldPrefab.SetActive(false);
     }
 
 }
