@@ -28,7 +28,7 @@ public class Player : Character
     private bool isGrounded = true;
     private bool isJumping = false;
     private bool isAttack = false;
-    private bool isDeath = false;
+    //private bool isDeath = false;
     public bool isShieldActive = false;
     private bool isRockUnlock = false;
     private UIManage uiManager;
