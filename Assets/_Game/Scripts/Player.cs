@@ -30,7 +30,7 @@ public class Player : Character
     private bool isAttack = false;
     private bool isDeath = false;
     public bool isShieldActive = false;
-    public bool isRockUnlock = false;
+    private bool isRockUnlock = false;
     private UIManage uiManager;
 
     private float horizontal;
@@ -215,11 +215,11 @@ public class Player : Character
         Invoke(nameof(ResetAttack), 0.5f);
         Instantiate(rockPrefab, throwPoint.position, throwPoint.rotation);
     }
-    public void UpLevel(int add)
+    public void UpLevel(int addLevel)
     {
         //Debug.Log("Level before add:" + levelPlayer);
-        levelPlayer += add;
-        speed += levelPlayer + 1;
+        levelPlayer += addLevel;
+        speed += levelPlayer*0.5f;
         attackAreaScript.damageInUplevel(levelPlayer);
         //Debug.Log("Level after add:" + levelPlayer);
     }
