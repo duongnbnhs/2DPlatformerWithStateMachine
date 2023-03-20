@@ -23,14 +23,16 @@ public class Kunai : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
+    float timer = 0;
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
+            timer += Time.deltaTime;
             AudioController.Ins.PlaySound(hitSound);
             collision.GetComponent<Character>().OnHit(30f);
             Instantiate(hitVFX, transform.position, transform.rotation);
+            
             OnDespawn();
         }
     }
