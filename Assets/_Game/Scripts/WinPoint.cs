@@ -25,7 +25,7 @@ public class WinPoint : MonoBehaviour
         }else if(collision.tag == "Player" && player.rewardCollect < ScoreWin)
         {
             //ToDo: Add message UI not enough chest treasure
-            Instantiate(CombatTextPrefab, transform.position + Vector3.up, Quaternion.identity).OnInitAnnounce("Collect more chests");
+            Instantiate(CombatTextPrefab, transform.position + Vector3.up, Quaternion.identity).OnInitAnnounce("Collect more chests to become the winner!");
         }
     }
 }
