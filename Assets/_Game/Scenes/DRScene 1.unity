@@ -27844,7 +27844,7 @@ PrefabInstance:
       objectReference: {fileID: 122786926}
     - target: {fileID: 2078973041, guid: 03b20af56ca56c54c941857fb7e158fc, type: 3}
       propertyPath: timeLoopAttack
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6334332686660146851, guid: 03b20af56ca56c54c941857fb7e158fc, type: 3}
       propertyPath: m_RootOrder
@@ -34433,7 +34433,7 @@ PrefabInstance:
       objectReference: {fileID: 2046842819}
     - target: {fileID: 1873845521, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
       propertyPath: timeLoopAttack
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1873845521, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
       propertyPath: CombatTextPrefab
