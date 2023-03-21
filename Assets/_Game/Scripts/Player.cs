@@ -31,7 +31,9 @@ public class Player : Character
     private bool isAttack = false;
     //private bool isDeath = false;
     public bool isShieldActive = false;
+    //Unlock player skill
     private bool isRockUnlock = false;
+    private bool isMagicUnlock = false;
     private UIManage uiManager;
 
     private float horizontal;
@@ -97,28 +99,29 @@ public class Player : Character
             }
 
             //attack
-            if (Input.GetKeyDown(KeyCode.C) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.L) && isGrounded)
             {
                 Attack();
             }
 
             //throw
-            if (Input.GetKeyDown(KeyCode.V) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.J) && isGrounded)
             {
                 Throw();
             }
             //throw magic kunai
-            if (Input.GetKeyDown(KeyCode.H) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.K) && isGrounded && isMagicUnlock == true)
             {
                 ThrowMagicKunai();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            {
-                EnebleShield();
-            }
+            // Shield are bugging
+            //if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            //{
+            //    EnebleShield();
+            //}
 
-            if (Input.GetKeyDown(KeyCode.G) && isGrounded && isRockUnlock == true)
+            if (Input.GetKeyDown(KeyCode.U) && isGrounded && isRockUnlock == true)
             {
                 CallRock();
             }
@@ -174,6 +177,10 @@ public class Player : Character
     public void OnRockUnlock(bool unlock)
     {
         isRockUnlock = unlock;
+    }
+    public void OnMagicUnlock(bool unlock)
+    {
+        isMagicUnlock = unlock;
     }
     protected override void OnDeath()
     {
