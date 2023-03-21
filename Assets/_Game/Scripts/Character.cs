@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
 
     [SerializeField] protected CombatText CombatTextPrefab;
 
-
+    [SerializeField] private float setHp;
     public float hp;
     private string currentAnimName;
 
@@ -23,8 +23,8 @@ public class Character : MonoBehaviour
 
     public virtual void OnInit()
     {
-        hp = 100;
-        healthBar.OnInit(100, transform);
+        hp = setHp;
+        healthBar.OnInit(setHp, transform);
     }
 
     public virtual void OnDespawn()

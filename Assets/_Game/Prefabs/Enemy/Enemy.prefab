@@ -411,6 +411,8 @@ MonoBehaviour:
   anim: {fileID: 3492267845992507286}
   healthBar: {fileID: 0}
   CombatTextPrefab: {fileID: 4940888138720853999, guid: 32237fc24f6a23742b15ffd33a5fbad9, type: 3}
+  setHp: 100
+  hp: 0
   attackRange: 2
   moveSpeed: 2.5
   rb: {fileID: 3492267845419564196}
