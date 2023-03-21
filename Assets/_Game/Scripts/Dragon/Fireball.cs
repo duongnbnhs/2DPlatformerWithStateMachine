@@ -20,7 +20,8 @@ public class Fireball : MonoBehaviour
 
     public void OnDespawn()
     {
-        Instantiate(explosion, transform.position, transform.rotation);
+        // khoi tao animation, xoa luon animation
+        Destroy(Instantiate(explosion, transform.position, transform.rotation));
         Destroy(gameObject);
     }
     protected float timer = 0;
@@ -28,6 +29,8 @@ public class Fireball : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            //AudioController.Ins.PlaySound(hitSound);
+            collision.GetComponent<Character>().OnHit(50f);
             OnDespawn();
         }
     }

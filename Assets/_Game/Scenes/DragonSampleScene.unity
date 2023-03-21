@@ -12876,7 +12876,7 @@ MonoBehaviour:
   anim: {fileID: 860112560}
   healthBar: {fileID: 829958503}
   CombatTextPrefab: {fileID: 4940888138720853999, guid: 32237fc24f6a23742b15ffd33a5fbad9, type: 3}
-  setHp: 0
+  setHp: 500
   hp: 100
   rb: {fileID: 620966790}
   groundLayer:
@@ -14422,8 +14422,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067035985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
-  m_LocalScale: {x: 0.8, y: 1.2, z: 1}
+  m_LocalPosition: {x: -0.54, y: 0.12, z: 0}
+  m_LocalScale: {x: 1.4797959, y: 1.6861804, z: 1}
   m_Children: []
   m_Father: {fileID: 1602980760}
   m_RootOrder: 0
@@ -15672,7 +15672,7 @@ MonoBehaviour:
   rightW: {fileID: 2286969543372472126, guid: eafbcd976a155e14f8217d6776fc3f49, type: 3}
   throwPoint: {fileID: 1346002579}
   maxHP: 0
-  target: {fileID: 0}
+  target: {fileID: 620966791}
 --- !u!50 &1602980757
 Rigidbody2D:
   serializedVersion: 4
@@ -15769,7 +15769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602980755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 111.28, y: -0.01, z: 0}
+  m_LocalPosition: {x: 110.84, y: -1.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1067035988}
