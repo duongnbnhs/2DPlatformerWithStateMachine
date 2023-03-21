@@ -66,6 +66,50 @@ public class Dragon : Character
             currentState.OnEnter(this);
         }
     }
+    public void SetTarget(Character character)
+    {
+        this.target = character;
+
+        if (IsTargetInRange())
+        {
+            ChangeState(new DragonAttackState());
+        }
+        else
+        if (Target != null)
+        {
+            ChangeState(new DragonPatrolState());
+        }
+        else
+        {
+            ChangeState(new DragonIdleState());
+        }
+    }
+    public void Moving()
+    {
+        ChangeAnim(StringHelper.ANIM_RUN);
+        rb.velocity = transform.right * moveSpeed;
+    }
+    public virtual bool IsTargetInRange()
+    {
+        if (target != null && Vector2.Distance(target.transform.position, transform.position) <= attackRange)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public void StopMoving()
+    {
+        ChangeAnim(StringHelper.ANIM_IDLE);
+        rb.velocity = Vector2.zero;
+    }
+    public virtual void ChangeDirection(bool isRight)
+    {
+        this.isRight = isRight;
+        transform.rotation = isRight ? Quaternion.Euler(Vector3.zero) : Quaternion.Euler(Vector3.up * 180);
+    }
     public void Strike()
     {
         ChangeAnim("strike");
