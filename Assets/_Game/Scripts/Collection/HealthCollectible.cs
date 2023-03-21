@@ -16,6 +16,8 @@ public class HealthCollectible : MonoBehaviour
             healthBar.SetNewHp(player.hp);
             gameObject.SetActive(false);
             AudioController.Ins.PlaySound(CollectSound);
+            //Up level then delete
+            Destroy(gameObject);
         }
     }
 }
