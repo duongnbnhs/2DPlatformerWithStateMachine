@@ -14,16 +14,6 @@ public class EnemyMagicKunai : Kunai
             Instantiate(hitVFX, transform.position, transform.rotation);
             AutoDestroy();
         }
-        if (collision.tag == "Rock")
-        {
-            Instantiate(hitVFX, transform.position, transform.rotation);
-            OnDespawn();
-        }
-        if (collision.tag == "Shield")
-        {
-            Instantiate(hitVFX, transform.position, transform.rotation);
-            OnDespawn();
-        }
     }
     private void AutoDestroy()
     {

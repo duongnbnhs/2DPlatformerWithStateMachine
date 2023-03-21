@@ -96,7 +96,7 @@ MonoBehaviour:
   hitVFX: {fileID: 6963639000805962400, guid: 719a472c68416da42acc0bade4f2f282, type: 3}
   rb: {fileID: 740278761698869805}
   hitSound: {fileID: 8300000, guid: 11f2fb8c24ab53741939b255bda4aab3, type: 3}
-  damageToPlayer: 10
+  damageToEnemy: 20
 --- !u!1 &740278762375454869
 GameObject:
   m_ObjectHideFlags: 0
