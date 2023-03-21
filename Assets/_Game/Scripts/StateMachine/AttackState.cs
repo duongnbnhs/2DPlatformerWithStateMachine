@@ -23,7 +23,7 @@ public class AttackState : IState<Enemy>
     public void OnExecute(Enemy enemy)
     {
         timer += Time.deltaTime;
-        if (timer >= enemy.timeLoopAttack)
+        if (timer >= 1.5f)
         {
             enemy.ChangeState(new PatrolState());
         }

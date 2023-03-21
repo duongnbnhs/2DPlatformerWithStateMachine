@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: de8bfe7b6a8207b4d8f594997f70cd58
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7436830090633299241
+    second: flyKick_03_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -126,7 +129,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: flyKick_03_0
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 23
+        width: 138
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925422fb09de43760800000000000000
+      internalID: 7436830090633299241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

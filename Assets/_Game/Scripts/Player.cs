@@ -57,8 +57,12 @@ public class Player : Character
 
         if (IsDead)
         {
-            uiManager.GameOver("You lose");
-            return;
+            if(uiManager != null)
+            {
+                uiManager.GameOver("You lose");
+                return;
+            }
+            
         }
 
         isGrounded = CheckGrounded();

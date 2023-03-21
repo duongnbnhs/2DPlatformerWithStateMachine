@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class DragonAttackState : IState<Dragon>
 {
+    float timer;
     public void OnEnter(Dragon dragon)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("DRA atk");
+        //doi huong enemy toi huong cua player
+        dragon.ChangeDirection(dragon.Target.transform.position.x > dragon.transform.position.x);
+
+        dragon.StopMoving();
+        if (dragon.CheckHaflHP())
+        {
+            dragon.ChooseSkillByRange();
+        }
+        else
+        {
+            dragon.RandomSkill();
+        }
+        timer = 0;
     }
 
     public void OnExecute(Dragon dragon)
     {
-        throw new System.NotImplementedException();
+        timer += Time.deltaTime;
+        if (timer >= 2f)
+        {
+            dragon.ChangeState(new DragonPatrolState());
+        }
     }
 
     public void OnExit(Dragon dragon)
