@@ -8,7 +8,7 @@ public class Enemy : Character
     [SerializeField] protected float attackRange;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected Rigidbody2D rb;
-    [SerializeField] protected float timeLoopAttack;
+    [SerializeField] public float timeLoopAttack;
 
     [SerializeField] protected GameObject attackArea;
 

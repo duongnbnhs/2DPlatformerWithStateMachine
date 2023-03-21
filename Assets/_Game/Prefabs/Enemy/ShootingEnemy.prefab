@@ -265,7 +265,7 @@ MonoBehaviour:
   attackRange: 30
   moveSpeed: 2.5
   rb: {fileID: 7701312661827445077}
-  timeLoopAttack: 0.2
+  timeLoopAttack: 0.5
   attackArea: {fileID: 7701312663579562387}
   slashEnemySound: {fileID: 8300000, guid: 11f2fb8c24ab53741939b255bda4aab3, type: 3}
   throwPoint: {fileID: 3976169044829858964}

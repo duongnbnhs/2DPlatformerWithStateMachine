@@ -19416,7 +19416,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3492267845278076012, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: damageTaken
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3492267845419564193, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_RootOrder

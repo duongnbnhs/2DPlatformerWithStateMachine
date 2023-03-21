@@ -35,5 +35,10 @@ public class Kunai : MonoBehaviour
             
             OnDespawn();
         }
+        if (collision.tag == "EnemyRock")
+        {
+            Instantiate(hitVFX, transform.position, transform.rotation);
+            OnDespawn();
+        }
     }
 }

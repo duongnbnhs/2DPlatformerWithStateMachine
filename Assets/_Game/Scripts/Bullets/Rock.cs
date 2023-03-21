@@ -7,6 +7,7 @@ public class Rock : MonoBehaviour
     public GameObject hitVFX;
     public Rigidbody2D rb;
     public AudioClip hitSound;
+    [SerializeField]private float timeRockExist;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class Rock : MonoBehaviour
     public void OnInit()
     {
         //rb.velocity = transform.right * 5f;
-        Invoke(nameof(OnDespawn), 4f);
+        Invoke(nameof(OnDespawn), timeRockExist);
     }
 
     public void OnDespawn()
