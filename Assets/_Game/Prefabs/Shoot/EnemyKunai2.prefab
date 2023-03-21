@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 740278761698869807}
   - component: {fileID: 740278761698869805}
   - component: {fileID: 740278761698869804}
-  - component: {fileID: 155990408}
+  - component: {fileID: 8687634726306412077}
   m_Layer: 0
-  m_Name: Kunai
+  m_Name: EnemyKunai2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6571617, y: 0.19413424}
   m_EdgeRadius: 0
---- !u!114 &155990408
+--- !u!114 &8687634726306412077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,12 +90,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 740278761698869806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2749c878ab449f649a98be5132aaacde, type: 3}
+  m_Script: {fileID: 11500000, guid: 268a1ba055ab00a4eb9adfd90975ba6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitVFX: {fileID: 6963639000805962400, guid: 719a472c68416da42acc0bade4f2f282, type: 3}
   rb: {fileID: 740278761698869805}
-  hitSound: {fileID: 8300000, guid: 347426481a60b394bb52cbf96d7607fe, type: 3}
+  hitSound: {fileID: 8300000, guid: 11f2fb8c24ab53741939b255bda4aab3, type: 3}
 --- !u!1 &740278762375454869
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 740278762375454874}
   - component: {fileID: 740278762375454875}
   m_Layer: 0
-  m_Name: Kunai
+  m_Name: DragonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,13 +120,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740278762375454869}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 740278761698869807}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &740278762375454875
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: 21300000, guid: a4aad7854c843684eb5dd1e6f2bd8945, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77f084663dedae54bbc26660c4568bd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

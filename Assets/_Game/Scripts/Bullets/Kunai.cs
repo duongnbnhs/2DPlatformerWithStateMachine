@@ -32,7 +32,7 @@ public class Kunai : MonoBehaviour
             AudioController.Ins.PlaySound(hitSound);
             collision.GetComponent<Character>().OnHit(30f);
             Instantiate(hitVFX, transform.position, transform.rotation);
-            
+
             OnDespawn();
         }
         if (collision.tag == "EnemyRock")

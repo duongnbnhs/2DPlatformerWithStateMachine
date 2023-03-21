@@ -9,7 +9,7 @@ public class EnemyKunai : Kunai
         if (collision.tag == "Player")
         {
             AudioController.Ins.PlaySound(hitSound);
-            collision.GetComponent<Character>().OnHit(5f);
+            collision.GetComponent<Character>().OnHit(10f);
             Instantiate(hitVFX, transform.position, transform.rotation);
             OnDespawn();
         }
