@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9042082191682515177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.265, y: 0.11, z: 0}
+  m_LocalPosition: {x: 0.158, y: -0.043, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children: []
   m_Father: {fileID: 9135355937549020741}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 3492267845419564198, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
+      objectReference: {fileID: 21300000, guid: 2d460b2882a55c6449c6e05c43d75f30, type: 3}
     - target: {fileID: 3492267845419564218, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_Name
       value: MagicEnemy
@@ -192,18 +192,18 @@ PrefabInstance:
     - target: {fileID: 3492267845992507281, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
+      objectReference: {fileID: 21300000, guid: 2d460b2882a55c6449c6e05c43d75f30, type: 3}
     - target: {fileID: 3492267845992507286, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 3ad6bab90b05fa94ab0443873fdc1a56, type: 2}
+      objectReference: {fileID: 9100000, guid: bfd597fa485ece8429347dce6227113f, type: 2}
     - target: {fileID: 3492267845992507287, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.7860109
       objectReference: {fileID: 0}
     - target: {fileID: 3492267845992507287, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 2.5134604
       objectReference: {fileID: 0}
     - target: {fileID: 3492267845992507287, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_LocalScale.z
@@ -211,11 +211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3492267845992507287, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13
+      value: 0.218
       objectReference: {fileID: 0}
     - target: {fileID: 3492267845992507287, guid: b15d1abdd416d6a45afdface22da210c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72
+      value: 0.34
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3492267845419564197, guid: b15d1abdd416d6a45afdface22da210c, type: 3}

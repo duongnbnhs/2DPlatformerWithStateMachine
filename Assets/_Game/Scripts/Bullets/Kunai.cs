@@ -23,7 +23,7 @@ public class Kunai : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    float timer = 0;
+    protected float timer = 0;
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
