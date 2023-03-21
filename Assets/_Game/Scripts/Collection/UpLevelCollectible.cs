@@ -16,8 +16,10 @@ public class UpLevelCollectible : MonoBehaviour
             player.UpLevel(levelBonus);
             player.OnHeal(healthValue);
             healthBar.SetNewHp(player.hp);
-            gameObject.SetActive(false);
             AudioController.Ins.PlaySound(CollectSound);
+            //Up level then delete
+            Destroy(gameObject);
+           
         }
     }
 }
