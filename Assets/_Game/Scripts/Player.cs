@@ -12,6 +12,7 @@ public class Player : Character
     [SerializeField] private float jumpForce = 350;
 
     [SerializeField] private Kunai kunaiPrefab;
+    [SerializeField] private KunaiMagicPlayer kunaiMagicPrefab;
 
     [SerializeField] private Rock rockPrefab;
     [SerializeField] private Transform throwPoint;
@@ -101,6 +102,11 @@ public class Player : Character
             if (Input.GetKeyDown(KeyCode.V) && isGrounded)
             {
                 Throw();
+            }
+            //throw magic kunai
+            if (Input.GetKeyDown(KeyCode.H) && isGrounded)
+            {
+                ThrowMagicKunai();
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -205,6 +211,14 @@ public class Player : Character
         isAttack = true;
         Invoke(nameof(ResetAttack), 0.5f - levelPlayer * 0.1f);
         Instantiate(kunaiPrefab, throwPoint.position, throwPoint.rotation);
+    }
+    public void ThrowMagicKunai()
+    {
+        AudioController.Ins.PlaySound(kunaiSound);
+        ChangeAnim(StringHelper.ANIM_THROW);
+        isAttack = true;
+        Invoke(nameof(ResetAttack), 0.5f - levelPlayer * 0.1f);
+        Instantiate(kunaiMagicPrefab, throwPoint.position, throwPoint.rotation);
     }
 
     public void CallRock()

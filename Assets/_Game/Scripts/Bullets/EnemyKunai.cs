@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyKunai : Kunai
 {
-    [SerializeField] float damageToPlayer;
+    [SerializeField] private float damageToPlayer;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")

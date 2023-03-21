@@ -1,12 +1,30 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 
-namespace Assets._Game.Scripts.Bullets
+public class KunaiMagicPlayer : Kunai
 {
-    internal class KunaiMagicPlayer
+    [SerializeField] private float damageToPlayer;
+    float timer = 0;
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Enemy")
+        {
+            timer += Time.deltaTime;
+            AudioController.Ins.PlaySound(hitSound);
+            collision.GetComponent<Character>().OnHit(30f);
+            Instantiate(hitVFX, transform.position, transform.rotation);
+
+            AutoDestroy();
+        }
+        //if (collision.tag == "EnemyRock")
+        //{
+        //    Instantiate(hitVFX, transform.position, transform.rotation);
+        //    OnDespawn();
+        //}
+    }
+    private void AutoDestroy()
+    {
+        Invoke(nameof(OnDespawn), 3f);
     }
 }

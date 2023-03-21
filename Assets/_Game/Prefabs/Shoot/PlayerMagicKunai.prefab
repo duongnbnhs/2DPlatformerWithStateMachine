@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 740278761698869807}
   - component: {fileID: 740278761698869805}
   - component: {fileID: 740278761698869804}
-  - component: {fileID: 5907861168907800121}
+  - component: {fileID: 2985495924696480949}
   m_Layer: 0
-  m_Name: MagicKunai
+  m_Name: PlayerMagicKunai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33347702, y: 0.32037044}
   m_EdgeRadius: 0
---- !u!114 &5907861168907800121
+--- !u!114 &2985495924696480949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 740278761698869806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4bd15c40498f1741ae6e622ee321ac9, type: 3}
+  m_Script: {fileID: 11500000, guid: f16c2d26461d2854bb84188833702a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitVFX: {fileID: 6963639000805962400, guid: 719a472c68416da42acc0bade4f2f282, type: 3}

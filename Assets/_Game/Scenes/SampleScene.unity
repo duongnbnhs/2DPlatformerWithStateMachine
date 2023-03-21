@@ -14420,6 +14420,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 400
   kunaiPrefab: {fileID: 155990408, guid: 06b8f8cd0d354914a9ef825315b7d898, type: 3}
+  kunaiMagicPrefab: {fileID: 2985495924696480949, guid: 0a545c188a23a8d4bb231b81d2fc564b, type: 3}
   rockPrefab: {fileID: 8635189426448162655, guid: 971ac737c9c26204abc6213232d18a3b, type: 3}
   throwPoint: {fileID: 1909841272}
   attackArea: {fileID: 1288465703}
@@ -22797,6 +22798,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1848428477}
+    - target: {fileID: 1873845521, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
+      propertyPath: timeLoopAttack
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873845521, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
+      propertyPath: CombatTextPrefab
+      value: 
+      objectReference: {fileID: 4940888138720853999, guid: 32237fc24f6a23742b15ffd33a5fbad9, type: 3}
+    - target: {fileID: 9135355937549020739, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9135355937549020741, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -22844,6 +22857,10 @@ PrefabInstance:
     - target: {fileID: 9135355937549020766, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
       propertyPath: m_Name
       value: MagicEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135355937549020766, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 393f35836ecf0a049815b0941b535a02, type: 3}
