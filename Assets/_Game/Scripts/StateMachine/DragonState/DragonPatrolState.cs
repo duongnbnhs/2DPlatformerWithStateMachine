@@ -17,8 +17,8 @@ public class DragonPatrolState : IState<Dragon>
     {
         timer += Time.deltaTime;
 
-        //if (dragon.Target != null && dragon.Target.transform.position.y - dragon.transform.position.y < 0.1f)
-        if (dragon.Target != null)
+        if (dragon.Target != null && dragon.Target.transform.position.y - dragon.transform.position.y < 0.1f)
+        //if (dragon.Target != null)
         {
                 //doi huong enemy toi huong cua player
                 dragon.ChangeDirection(dragon.Target.transform.position.x > dragon.transform.position.x);
