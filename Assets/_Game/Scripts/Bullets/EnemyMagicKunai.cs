@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyKunai : Kunai
+public class EnemyMagicKunai : Kunai
 {
-    [SerializeField] float damageToPlayer;
+    [SerializeField] private float damageToPlayer;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -12,7 +12,7 @@ public class EnemyKunai : Kunai
             AudioController.Ins.PlaySound(hitSound);
             collision.GetComponent<Character>().OnHit(damageToPlayer);
             Instantiate(hitVFX, transform.position, transform.rotation);
-            OnDespawn();
+            AutoDestroy();
         }
         if (collision.tag == "Rock")
         {
@@ -24,5 +24,9 @@ public class EnemyKunai : Kunai
             Instantiate(hitVFX, transform.position, transform.rotation);
             OnDespawn();
         }
+    }
+    private void AutoDestroy()
+    {
+        Invoke(nameof(OnDespawn), 1f);
     }
 }
