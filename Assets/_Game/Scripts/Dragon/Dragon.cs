@@ -38,7 +38,7 @@ public class Dragon : Character
     public override void OnInit()
     {
         base.OnInit();
-        Debug.Log("Dragon init");
+        //Debug.Log("Dragon init");
         maxHP = hp;
         ChangeState(new DragonIdleState());
     }
