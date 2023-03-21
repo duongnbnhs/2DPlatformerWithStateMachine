@@ -14923,7 +14923,7 @@ MonoBehaviour:
   anim: {fileID: 860112560}
   healthBar: {fileID: 829958503}
   CombatTextPrefab: {fileID: 4940888138720853999, guid: 32237fc24f6a23742b15ffd33a5fbad9, type: 3}
-  setHp: 1000
+  setHp: 10
   hp: 0
   rb: {fileID: 620966790}
   groundLayer:
