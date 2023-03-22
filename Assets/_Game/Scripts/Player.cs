@@ -75,16 +75,16 @@ public class Player : Character
 
         if (isAttack)
         {
-            rb.velocity = Vector2.zero;
+            //rb.velocity = Vector2.zero;
             return;
         }
 
         if (isGrounded)
         {
-            if (isJumping)
-            {
-                return;
-            }
+            //if (isJumping)
+            //{
+            //    return;
+            //}
             //ChangeAnim(StringHelper.ANIM_IDLE);
             //jump
             if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
@@ -157,18 +157,18 @@ public class Player : Character
         base.OnInit();
         isAttack = false;
 
-        transform.position = savePoint;
+        //transform.position = savePoint;
         ChangeAnim(StringHelper.ANIM_IDLE);
         DeActiveAttack();
 
-        SavePoint();
+        //SavePoint();
         //UIManager.instance.SetCoin(coin);
     }
 
     public override void OnDespawn()
     {
         base.OnDespawn();
-        OnInit();
+        //OnInit();
     }
     public void OnHeal(float healBonus)
     {
@@ -265,10 +265,10 @@ public class Player : Character
     }
 
 
-    internal void SavePoint()
-    {
-        savePoint = transform.position;
-    }
+    //internal void SavePoint()
+    //{
+    //    savePoint = transform.position;
+    //}
 
     private void ActiveAttack()
     {
@@ -305,7 +305,9 @@ public class Player : Character
     public void EnebleShield()
     {
         shieldPrefab.SetActive(true);
-        Invoke(nameof(ShieldOff), 0.75f);
+        var playerPos = gameObject.transform.position;
+        shieldPrefab.transform.position = playerPos + new Vector3(0.1f, 0, 0);
+        Invoke(nameof(ShieldOff), 0.5f);
 
     }
     public void ShieldOff()
