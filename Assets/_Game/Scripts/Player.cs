@@ -81,10 +81,10 @@ public class Player : Character
 
         if (isGrounded)
         {
-            //if (isJumping)
-            //{
-            //    return;
-            //}
+            if (isJumping)
+            {
+                return;
+            }
             //ChangeAnim(StringHelper.ANIM_IDLE);
             //jump
             if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
