@@ -820,11 +820,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &134849013 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1110519890809917136, guid: f02969ae4aea99e44bdc519d6d5bd31f, type: 3}
-  m_PrefabInstance: {fileID: 1955051899}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &136879857
 GameObject:
   m_ObjectHideFlags: 0
@@ -28923,7 +28918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5602277550232957969, guid: 5ca79fbcf86d74743996036379f9fde2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5602277550232957974, guid: 5ca79fbcf86d74743996036379f9fde2, type: 3}
       propertyPath: m_RootOrder
@@ -30006,7 +30001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7585875210238247420, guid: a23be43dd35f0604fbce108ac710180a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7585875210305645396, guid: a23be43dd35f0604fbce108ac710180a, type: 3}
       propertyPath: m_RootOrder
@@ -30719,14 +30714,14 @@ MonoBehaviour:
   Enemy2: {fileID: 1810038193}
   Enemy3: {fileID: 822513343}
   Enemy4: {fileID: 1452343547413369798}
-  Enemy5: {fileID: 134849013}
+  Enemy5: {fileID: 0}
   Enemy6: {fileID: 0}
   Enemy7: {fileID: 0}
   Reward1: {fileID: 637732028}
   Reward2: {fileID: 457580612}
   Reward3: {fileID: 7585875209014902222}
   Reward4: {fileID: 559059700}
-  Reward5: {fileID: 1583036341}
+  Reward5: {fileID: 0}
   Reward6: {fileID: 0}
   Reward7: {fileID: 0}
 --- !u!1 &617579151
@@ -31378,7 +31373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5602277550232957969, guid: 5ca79fbcf86d74743996036379f9fde2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5602277550232957974, guid: 5ca79fbcf86d74743996036379f9fde2, type: 3}
       propertyPath: m_RootOrder
